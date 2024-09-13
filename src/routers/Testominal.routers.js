@@ -9,8 +9,8 @@ const router = Router();
 
 
 
-router.route("/createTestominal").post(upload.single('testimonialImg'), createTestominal)
-// router.route("/fetchTestominal").get(fetchTestominal)
+// router.route("/createTestominal").post(upload.single('testimonialImg'), createTestominal)
+router.route("/fetchTestominal").get(fetchTestominal)
 
 
 export default router;

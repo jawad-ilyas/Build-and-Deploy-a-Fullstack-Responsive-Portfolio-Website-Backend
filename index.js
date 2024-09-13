@@ -9,11 +9,8 @@ dotenv.config({
 
 
 const portConfiguration = process.env.PORT;
-connectDb().
-    then(() => {
-        app.listen(portConfiguration, () => {
-            console.log(`http://localhost:${portConfiguration}`)
-        })
-    }).catch((error) => {
-        console.log("index js :: connect Db :: error ", error)
-    })
+connectDb()
+
+app.listen(portConfiguration, () => {
+    console.log(`http://localhost:${portConfiguration}`)
+})

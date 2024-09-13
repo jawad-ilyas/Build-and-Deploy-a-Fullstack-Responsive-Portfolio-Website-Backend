@@ -5,9 +5,7 @@ import { ApiResponse } from "../utilis/ApiResponse.utilis.js"
 import { asyncHandler } from "../utilis/AsyncHandler.utilis.js"
 import { uploadOnCloudinary } from "../utilis/Cloudinary.utilis.js";
 
-import path from 'path';
 
-import { uploadOnCloudinary } from path.join(__dirname, '../utilis/cloudinary.utilis.js');
 
 
 

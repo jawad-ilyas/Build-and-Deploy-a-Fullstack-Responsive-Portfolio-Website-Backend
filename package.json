@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type" : "module",
+  "type": "module",
   "scripts": {
     "dev": "nodemon -r dotenv/config --experimental-json-modules index.js"
-   
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cloudinary": "^2.4.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "express": "^4.21.0",

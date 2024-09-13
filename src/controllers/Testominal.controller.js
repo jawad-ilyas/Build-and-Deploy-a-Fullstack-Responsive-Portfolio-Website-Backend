@@ -56,4 +56,17 @@ const createTestominal = asyncHandler(async (req, res) => {
         )
 })
 
-export { createTestominal }
+
+const fetchTestominal = asyncHandler(async (req, res) => {
+
+    const testimonial = await Testimonial.find();
+
+    console.log("Testominal.controller.js :: fetchTestominal :: testimonial", testimonial)
+
+    // res.status(201).
+    //     json(
+    //         new ApiResponse(201, "Testimonial is Created", testimonial)
+    //     )
+})
+
+export { createTestominal, fetchTestominal }

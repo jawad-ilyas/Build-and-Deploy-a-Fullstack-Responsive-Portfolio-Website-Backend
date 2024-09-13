@@ -3,6 +3,7 @@ import { Testimonial } from "../models/testimonial.models.js";
 import { ApiError } from "../utilis/ApiError.utilis.js";
 import { ApiResponse } from "../utilis/ApiResponse.utilis.js"
 import { asyncHandler } from "../utilis/AsyncHandler.utilis.js"
+import { uploadOnCloudinary } from "../utilis/cloudinary.utilis.js";
 
 
 
@@ -32,6 +33,7 @@ const createTestominal = asyncHandler(async (req, res) => {
         throw new ApiError(404, "Testominal.controller.js :: createTestominal :: testimonialImgLocalPath are required");
     }
 
+    const testimonialImg = await uploadOnCloudinary(testimonialImgLocalPath)
 
 
     const testominal = await Testimonial.create(
@@ -39,7 +41,7 @@ const createTestominal = asyncHandler(async (req, res) => {
             name,
             company,
             feedback,
-            // testimonialImg: testimonialImg?.url
+            testimonialImg: testimonialImg?.url
 
         }
     )

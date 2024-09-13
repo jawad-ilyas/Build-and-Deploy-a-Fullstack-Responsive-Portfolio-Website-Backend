@@ -3,8 +3,11 @@ import { Testimonial } from "../models/testimonial.models.js";
 import { ApiError } from "../utilis/ApiError.utilis.js";
 import { ApiResponse } from "../utilis/ApiResponse.utilis.js"
 import { asyncHandler } from "../utilis/AsyncHandler.utilis.js"
-import { uploadOnCloudinary } from "../utilis/cloudinary.utilis.js";
+// import { uploadOnCloudinary } from "../utilis/cloudinary.utilis.js";
 
+import path from 'path';
+
+import { uploadOnCloudinary } from path.join(__dirname, '../utilis/cloudinary.utilis.js');
 
 
 

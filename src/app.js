@@ -20,7 +20,7 @@ app.use(cookieParser())
 
 
 
-app.use("/api/v1/testominal", testominalRouter)
+app.use("/api/v1/testimonial", testominalRouter)
 
 
 

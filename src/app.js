@@ -1,7 +1,6 @@
 import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser";
-import testominalRouter from "./routers/Testominal.routers.js";
 
 const app = express();
 
@@ -16,11 +15,14 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true })); // Correct usage of urlencoded middleware
 app.use(cookieParser())
 
+import testominalRouter from "./routers/Testominal.routers.js";
+import aboutRouter from "./routers/About.routers.js";
 
 
 
 
 app.use("/api/v1/testimonial", testominalRouter)
+app.use("/api/v1/about", aboutRouter)
 
 
 

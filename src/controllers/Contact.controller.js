@@ -37,19 +37,49 @@ const createContact = asyncHandler(async (req, res) => {
 })
 
 // ! fetch Contact 
-const fetchContact = asyncHandler(async () => {
+const fetchContact = asyncHandler(async (req, res) => {
+    const contacts = await Contact.find();
 
+
+    res.status(200).
+        json(
+            new ApiResponse(200, "ALL Contacts Are fetched ", contacts)
+        )
 })
 
 // ! update Contact 
-const updateContact = asyncHandler(async () => {
+// const updateContact = asyncHandler(async () => {
 
-})
+// })
 
 // ! delete Contact 
-const deleteContact = asyncHandler(async () => {
+const deleteContact = asyncHandler(async (req, res) => {
+
+
+    const { id } = req.params;
+
+    if (!id) {
+        throw new ApiError(400, " Delete Contact id is not presnt ")
+    }
+
+    const verifyContact = await Contact.findById({ _id: id })
+
+    if (!verifyContact) {
+        throw new ApiError(400, " Delete Contact id is not matched ")
+    }
+
+
+    const deleteContactDocument = await Contact.findByIdAndDelete(
+        { _id: id }
+    )
+
+
+    res.status(200)
+        .json(
+            new ApiResponse(200, "Contact is delete ", deleteContactDocument)
+        )
 
 })
 
 
-export { createContact, fetchContact, updateContact, deleteContact }
+export { createContact, fetchContact, deleteContact }

@@ -20,6 +20,7 @@ import aboutRouter from "./routers/About.routers.js";
 import brandRouter from "./routers/Brand.routers.js"
 import contactRouter from "./routers/Contact.routers.js"
 import skillRouter from "./routers/Skill.routers.js"
+import workExperienceRouter from "./routers/workExperience.routers.js"
 
 
 
@@ -28,6 +29,7 @@ app.use("/api/v1/about", aboutRouter)
 app.use("/api/v1/brand", brandRouter)
 app.use("/api/v1/contact", contactRouter)
 app.use("/api/v1/skill", skillRouter)
+app.use("/api/v1/workExperience", workExperienceRouter)
 
 
 

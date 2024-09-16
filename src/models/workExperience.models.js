@@ -3,13 +3,16 @@ import mongoose from 'mongoose';
 const workExperienceSchema = new mongoose.Schema(
     {
         workExperienceName: {
+            type :String , 
             required: [true, "Work Experience Name is required"]
         },
         workExperienceCompany: {
+            type: String, 
             required: [true, "Work Experience Company is required"]
         },
         workExperienceDescription: {
-            required: [true, "Work Experience Description is required"]
+            type: String, 
+
         }
     },
     { timestamps: true }

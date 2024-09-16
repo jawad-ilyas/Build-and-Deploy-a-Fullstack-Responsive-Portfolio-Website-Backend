@@ -11,7 +11,7 @@ const contactSchema = new mongoose.model({
     },
     contactMessage: {
         type: String,
-        required: [true, "Contact message is required "]
+       
     }
 }, { timestamps: true })
 

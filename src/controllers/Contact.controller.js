@@ -1,0 +1,55 @@
+import { asyncHandler } from "../utilis/AsyncHandler.utilis.js"
+import { ApiError } from "../utilis/ApiError.utilis.js"
+import { ApiResponse } from "../utilis/ApiResponse.utilis.js"
+import { Contact } from "../models/contact.model.js"
+
+
+// ! create Contact 
+const createContact = asyncHandler(async (req, res) => {
+
+
+    const { contactName, contactEmail, contactMessage } = req.body;
+    console.log("Contact Controller :: createContact :: contact name :: ", contactName)
+    console.log("Contact Controller :: createContact :: contact email :: ", contactEmail)
+    console.log("Contact Controller :: createContact :: contact Message :: ", contactMessage)
+
+
+    if (
+        [contactName, contactEmail].some(filed => !filed || filed.trim() === "")
+
+    ) {
+        throw new ApiError(404, "All Fields are required ")
+    }
+
+
+    const contact = await Contact.create(
+        {
+            contactName,
+            contactEmail,
+            contactMessage: contactMessage || ""  // Use an empty string if contactMessage is not provided
+        }
+    )
+
+    res.status(201)
+        .json(
+            new ApiResponse(200, "New contact is created ", contact)
+        )
+})
+
+// ! fetch Contact 
+const fetchContact = asyncHandler(async () => {
+
+})
+
+// ! update Contact 
+const updateContact = asyncHandler(async () => {
+
+})
+
+// ! delete Contact 
+const deleteContact = asyncHandler(async () => {
+
+})
+
+
+export { createContact, fetchContact, updateContact, deleteContact }

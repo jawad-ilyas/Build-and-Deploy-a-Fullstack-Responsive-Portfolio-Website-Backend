@@ -13,12 +13,6 @@ const brandSchema = new mongoose.Schema({
         required: [true, "brand Name is required "]
     },
 
-
-
-
-
-
-
 }, { timestamps: true })
 
 

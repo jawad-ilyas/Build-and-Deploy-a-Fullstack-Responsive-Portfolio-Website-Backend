@@ -17,12 +17,13 @@ app.use(cookieParser())
 
 import testominalRouter from "./routers/Testominal.routers.js";
 import aboutRouter from "./routers/About.routers.js";
-
+import brandRouter from "./routers/Brand.routers.js"
 
 
 
 app.use("/api/v1/testimonial", testominalRouter)
 app.use("/api/v1/about", aboutRouter)
+app.use("/api/v1/brand", brandRouter)
 
 
 

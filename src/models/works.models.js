@@ -3,7 +3,10 @@ import mongoose from 'mongoose';
 const WorkSchema = new mongoose.Schema({
     workName: {
         type: String,
-        required: [true, "Work Name is required"]
+        required: [true, "Work Name is required"],
+        lowercase: true, // Automatically converts value to lowercase
+
+
     },
     workDescription: {
         type: String,
@@ -15,7 +18,7 @@ const WorkSchema = new mongoose.Schema({
     },
     workCodeLink: {
         type: String,
-       
+
     },
     workImgUrl: {
         type: String,
@@ -23,7 +26,9 @@ const WorkSchema = new mongoose.Schema({
     },
     tags: [
         {
-            type: String
+            type: String,
+            lowercase: true, // Automatically converts value to lowercase
+
         }
     ]
 }, { timestamps: true });

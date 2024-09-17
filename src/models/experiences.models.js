@@ -6,10 +6,12 @@ const ExperienceSchema = new mongoose.Schema(
             type: String,
             required: [true, "Year is required field"]
         },
-        worksExperience: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "WorkExperience"
-        }
+        worksExperience: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "WorkExperience"
+            }
+        ]
     },
     { timestamps: true }
 );

@@ -1,4 +1,3 @@
-import { upload } from "../middlerwares/multer.middleware.js"
 import { ApiError } from "./ApiError.utilis.js"
 import { uploadOnCloudinary } from "./Cloudinary.utilis.js"
 const SingleFileValidate = async (file, message) => {

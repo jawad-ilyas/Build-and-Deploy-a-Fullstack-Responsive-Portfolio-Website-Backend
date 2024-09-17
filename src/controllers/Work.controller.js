@@ -1,7 +1,6 @@
 import { asyncHandler } from "../utilis/AsyncHandler.utilis.js";
 import { ApiError } from "../utilis/ApiError.utilis.js";
 import { ApiResponse } from "../utilis/ApiResponse.utilis.js";
-import { uploadOnCloudinary } from "../utilis/Cloudinary.utilis.js";
 import { SingleFileValidate } from "../utilis/SingleFileValidate.utilis.js";
 import { Work } from "../models/works.models.js";
 

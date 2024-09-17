@@ -22,6 +22,7 @@ import contactRouter from "./routers/Contact.routers.js"
 import skillRouter from "./routers/Skill.routers.js"
 import workExperienceRouter from "./routers/workExperience.routers.js"
 import WorkRouter from "./routers/Work.routers.js"
+import experienceRouter from "./routers/Experience.routers.js"
 
 
 
@@ -32,6 +33,7 @@ app.use("/api/v1/contact", contactRouter)
 app.use("/api/v1/skill", skillRouter)
 app.use("/api/v1/workExperience", workExperienceRouter)
 app.use("/api/v1/work", WorkRouter)
+app.use("/api/v1/experience", experienceRouter)
 
 
 

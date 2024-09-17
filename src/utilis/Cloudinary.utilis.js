@@ -22,11 +22,20 @@ const uploadOnCloudinary = async (localFilePath) => {
                 resource_type: 'auto'
             }
             )
-        fs.unlinkSync(localFilePath)
+        try {
+            fs.unlinkSync(localFilePath)
+        } catch (unlinkError) {
+            console.error('Error deleting file:', unlinkError);
+        }
         return response;
     } catch (error) {
-         fs.unlinkSync(localFilePath)
-        console.error("Cloudinary upload error:", error);
+        try {
+            fs.unlinkSync(localFilePath);
+        } catch (unlinkError) {
+            console.error('Error deleting file:', unlinkError);
+        }
+
+        console.error('Cloudinary upload error:', error);
         return null;
     }
 }

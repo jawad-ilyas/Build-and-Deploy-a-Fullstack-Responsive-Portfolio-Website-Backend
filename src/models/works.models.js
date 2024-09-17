@@ -15,7 +15,7 @@ const WorkSchema = new mongoose.Schema({
     },
     workCodeLink: {
         type: String,
-        required: [true, "Work Code Link is required"]
+       
     },
     workImgUrl: {
         type: String,

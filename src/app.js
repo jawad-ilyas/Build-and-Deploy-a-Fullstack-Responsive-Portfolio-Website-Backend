@@ -6,7 +6,7 @@ const app = express();
 
 app.use(cors(
     {
-        origin: "https://build-and-deploy-a-fullstack-responsi-jawadmughal0079s-projects.vercel.app/" || "*",
+        origin: "*",
         credentials: true,
     }
 ))

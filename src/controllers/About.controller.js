@@ -103,7 +103,7 @@ const updateAbout = asyncHandler(async (req, res) => {
     const verifyAbout = await About.findById(id);
     console.log("about controllers :: updateAbout :: verifyAbout", verifyAbout)
 
-    if (!verifyAbout ) {
+    if (!verifyAbout) {
         throw new ApiError(404, "About Document is not found For Updata :: update About")
     }
 
@@ -128,7 +128,6 @@ const updateAbout = asyncHandler(async (req, res) => {
             },
             {
                 new: true, // Return the updated document
-                runValidators: true // Ensure data is validated according to the schema
             }
         )
     }
@@ -142,13 +141,15 @@ const updateAbout = asyncHandler(async (req, res) => {
             },
             {
                 new: true, // Return the updated document
-                runValidators: true // Ensure data is validated according to the schema
             }
         )
     }
 
     console.log("about controllers :: updateAbout :: updateAboutDocument", updateAboutDocument)
-
+    res.status(200)
+        .json(
+            new ApiResponse(200, "about is Updates", updateAboutDocument)
+        )
 
 
 })

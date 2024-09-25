@@ -18,7 +18,7 @@ const createContact = asyncHandler(async (req, res) => {
         [contactName, contactEmail].some(filed => !filed || filed.trim() === "")
 
     ) {
-        throw new ApiError(404, "All Fields are required ")
+        new ApiResponse(404, "All Fields are required ")
     }
 
 

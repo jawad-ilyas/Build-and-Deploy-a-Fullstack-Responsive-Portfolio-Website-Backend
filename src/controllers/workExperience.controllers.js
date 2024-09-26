@@ -60,9 +60,9 @@ const updateWorkExperience = asyncHandler(async (req, res) => {
     }
     const { workExperienceName, workExperienceCompany, workExperienceDescription } = req.body;
 
-    console.log("Work Experience Controllers :: updateWorkExperience :: workExperienceName", workExperienceName)
-    console.log("Work Experience Controllers :: updateWorkExperience :: workExperienceCompany", workExperienceCompany)
-    console.log("Work Experience Controllers :: updateWorkExperience :: workExperienceDescription", workExperienceDescription)
+    // console.log("Work Experience Controllers :: updateWorkExperience :: workExperienceName", workExperienceName)
+    // console.log("Work Experience Controllers :: updateWorkExperience :: workExperienceCompany", workExperienceCompany)
+    // console.log("Work Experience Controllers :: updateWorkExperience :: workExperienceDescription", workExperienceDescription)
     const updateWorkExperienceDocument = await WorkExperience.findByIdAndUpdate(
         { _id: id },
         {

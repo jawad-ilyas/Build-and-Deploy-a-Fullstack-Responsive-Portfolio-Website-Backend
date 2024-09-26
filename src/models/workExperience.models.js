@@ -8,7 +8,6 @@ const workExperienceSchema = new mongoose.Schema(
         },
         workExperienceCompany: {
             type: String, 
-            required: [true, "Work Experience Company is required"]
         },
         workExperienceDescription: {
             type: String, 
